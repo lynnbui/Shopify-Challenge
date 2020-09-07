@@ -1,17 +1,14 @@
 /* a. How many orders were shipped by Speedy Express in total? */
-
 SELECT
     COUNT(*) AS OrderCount
 FROM Orders o
 JOIN Shippers s
     ON o.ShipperID = s.ShipperID
 WHERE s.ShipperName = 'Speedy Express';
-
 /* Answer: 54 */
 
 
 /* b. What is the last name of the employee with the most orders? */
-
 SELECT
     e.LastName,
     COUNT(*) AS OrderCount FROM Orders o
@@ -20,7 +17,6 @@ JOIN Employees e
 GROUP BY e.LastName
 ORDER BY OrderCount DESC
 LIMIT 1;
-
 /* Answer: Peacock with 40 orders */
 
 
@@ -39,5 +35,4 @@ WHERE c.Country = 'Germany'
 GROUP BY p.ProductName
 ORDER BY Quantity DESC
 LIMIT 1;
-
 /* Answer: Boston Crab Meat was ordered the most in Germany with 160 items sold */
